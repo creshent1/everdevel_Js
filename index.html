@@ -89,6 +89,22 @@
         document.write(str + ' of type is ' + typeof(str) + '<br>');
         str = parseInt(str);
         document.write(str + ' of type is ' + typeof(str));
+        document.write('<br>');
+
+        var num = 440;
+        document.write(num + 'of type is' + typeof(num) + '<br>');
+        str = String(num);
+        document.write(str + 'of type is' + typeof(str));
+
+        var num = 440;
+        document.write(num + ' of type is ' + typeof(num) + '<br>');
+        var bool = Boolean(num);
+        document.write(bool + ' of type is ' + typeof(bool));
+        document.write('<br>')
+        
+        const NOW_DATE = new Date();
+        document.write(NOW_DATE);
+        document.write('<br>')
 
         function evernt() {
             alert('12*6='+12*6);
@@ -100,7 +116,7 @@
     <input type="button" onclick="evernt()" value="클릭">
     <hr>
     <p>
-        1p ~ 7p    7p ~ 12p
+        1p ~ 7p    7p ~ 16p
     </p>
 </body>
 </html>
