@@ -69,6 +69,27 @@
         document.write(bool);
         document.write('<br>');
 
+        var aar = new Array();
+        arr = ["korea","usa","japan","unired kingdom","germany"];
+        arr.push("france");
+        document.write(arr.length);
+
+        var data = "hello world";
+        document.write(data + ' of data type is ' + typeof(data) + '<br>');
+        data = 23;
+        document.write(data + ' of data type is ' + typeof(data) + '<br>');
+        data = 23.7;
+        document.write(data + ' of data type is ' + typeof(data) + '<br>');
+        data = new Array();
+        document.write('data type is' + typeof(data) + '<br>');
+        data = true;
+        document.write(data + ' of data type is ' + typeof(data) + '<br>');
+
+        var str = "string";
+        document.write(str + ' of type is ' + typeof(str) + '<br>');
+        str = parseInt(str);
+        document.write(str + ' of type is ' + typeof(str));
+
         function evernt() {
             alert('12*6='+12*6);
         }
@@ -79,7 +100,7 @@
     <input type="button" onclick="evernt()" value="클릭">
     <hr>
     <p>
-        1p ~ 7p
+        1p ~ 7p    7p ~ 12p
     </p>
 </body>
 </html>
