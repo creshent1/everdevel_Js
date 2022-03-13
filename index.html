@@ -198,6 +198,7 @@
         }
         */
 
+        /*
         function hello(){
             document.write("hello World")
         }
@@ -221,18 +222,305 @@
         return add;
         }
         document.write(hey(1,2));
+        
 
         function evernt() {
             alert('12*6='+12*6);
         }
+
+        function factorial(fnum){
+        end_num = 1;
+        if(fnum==end_num) return end_num;
+            else return fnum*factorial(fnum-1);
+        }
+        document.write("3!="+factorial(3));
+        document.write('<br>')
+
+        function funcRef(){
+            return "ref";
+        }
         
+        var hello=funcRef;
+        document.write(hello());
+        document.write('<br>')
+
+        sum(1);
+        sum(1,2);
+        sum(1,2,3);
+ 
+        var sum = function(param1, param2 = 3, param3 = 10){
+            document.write(param1 + param2 + param3 + '<br>');
+        }
+        */
+        
+        hoisting();
+
+        function hoisting(){
+            document.write('i am here');
+            document.write('<br>');
+        }
+
+        /*
+        if(true){
+            let str="hello world";
+        }
+        document.write(str);
+
+
+
+        let num=11;
+
+        if(true){
+            let num=20;
+            document.write('num of inside is'+num);
+        }
+        document.write('<br>num of outside is'+num)
+        
+        let score=100;
+        {
+            score=55;
+            document.write('in block = '+score);
+        }
+        document.write('<br>out block = ' + score);
+        document.write('<br>');
+        
+        
+        if(1===1) {
+            let score=55;
+            document.write('in block = ' + score);
+        }
+        blockFunc();
+        document.write('<br>out block = ' + score);
+        */
+
+        
+        
+        {
+        const score = 100;
+        document.write('first block ' + score);
+        }
+ 
+        {
+        const score = 200;
+        document.write('<br>second block = ' + score);
+        }
+ 
+        {
+        const score = 300;
+        document.write('<br>third block = ' + score);
+        document.write('<br>')
+        }
+
+
+        const myDeviceData = { name : 'iPad Pro', cpu : 'A12 Bionic', display : 12.9 };
+ 
+        function myDevice({name, cpu, display}){
+            document.write(`${name}` + '<br>');
+            document.write(`${cpu}` + '<br>');
+            document.write(`${display}`);
+            document.write('<br>')
+        }
+ 
+        myDevice(myDeviceData);
+
+
+
+        document.write('value of screen.width is ' + screen.width);
+        document.write("<br />");
+        document.write('value of screen.height is ' + screen.height);
+        document.write("<br />");
+        document.write('value of screen.availWidth is ' + screen.availWidth);
+        document.write("<br />");
+        document.write('value of screen.availHeight is ' + screen.availHeight);
+
+        document.write('value of window.outerWidth is ' + window.outerWidth);
+        document.write("<br />");
+        document.write('value of window.outerHeight is ' + window.outerHeight);
+        document.write("<br />");
+        document.write('value of window.innerWidth is ' + window.innerWidth);
+        document.write("<br />");
+        document.write('value of window.innerHeight is ' + window.innerHeight);
+
+
+        window.onload = function(){
+            document.querySelector('.hello').style.color = "blue";
+            document.querySelector('p').style.color = "red";
+            document.querySelector('#hello').style.color = "yellow";
+        };
+
+        window.onload = function(){
+            document.getElementsByClassName('os')[1].innerText = "Windows 10"
+        }
+
+
+        /*
+         window.onload = function(){
+            document.getElementsByClassName('os')[1].innerText = "Windows 10"
+        }
+        */
+
+
+        window.onload = function(){
+            var target = document.getElementsByTagName('select')[0];
+            target.addEventListener('change', function(){
+                alert(this.value);
+            });
+        };
+
+
+        window.onload = function(){
+            var target = document.getElementsByTagName('div')[0];
+            target.style.width = "100px";
+            target.style.height = "30px";
+            target.style.background = "skyblue";
+            target.style.boxShadow = "10px 10px 10px lightblue";
+        };
+
+
+        window.onload = function(){
+            document.getElementById('checked').checked = false;
+            document.getElementById('unchecked').checked = true;
+        };
+
+
+
+        window.onload = function(){
+            for(var i = 0; i < document.getElementsByTagName('input').length; i++){
+                if(document.getElementsByTagName('input')[i].getAttribute('type') == 'checkbox'){
+                    document.getElementsByTagName('input')[i].checked = true;
+                }
+            }
+        };
+
+
+
+        window.onload = function(){
+            var hobbyAllBtn = document.getElementById('hobbySelectAllBtn');
+            var jobAllBtn = document.getElementById('jobSelectAllBtn');
+ 
+            var unHobbyAllBtn = document.getElementById('hobbyUnSelectAllBtn');
+            var unJobAllBtn = document.getElementById('jobUnSelectAllBtn');
+ 
+            hobbyAllBtn.addEventListener('click', function(){
+        checkedAll('hobby', true);
+            });
+ 
+            jobAllBtn.addEventListener('click', function(){
+        checkedAll('job', true);
+            });
+ 
+            unHobbyAllBtn.addEventListener('click', function(){
+        checkedAll('hobby', false);
+            });
+ 
+            unJobAllBtn.addEventListener('click', function(){
+        checkedAll('job', false);
+            });
+ 
+            function checkedAll(checkType, value){
+                for(var i = 0; i < document.getElementsByName(checkType).length; i++){
+                    document.getElementsByName(checkType)[i].checked = value;
+                }
+            }
+        }
+
+        window.onload = function(){
+            document.getElementById('checked').checked = false;
+            document.getElementById('unchecked').checked = true;
+        };
+
+
+        window.onload = function(){
+            target = document.getElementById('myFile');
+            target.addEventListener('change', function(){
+                fileList = "";
+                for(i = 0; i < target.files.length; i++){
+                    fileList += target.files[i].name + '<br>';
+                }
+                target2 = document.getElementById('showFiles');
+                target2.innerHTML = fileList;
+            });
+        }
     </script>
 </head>
 <body>
     <input type="button" onclick="evernt()" value="클릭">
     <hr>
     <p>
-        1p ~ 7p    7p ~ 16p
+        1p ~ 7p    7p ~ 16p  16p ~ 28p  28p ~ 32p
     </p>
+    <p>Hello World</p>
+    <p class="hello">Hello World</p>
+    <p class="hello">Hello World</p>
+    <p id="hello">Hello World</p>
+    <p class="hello">Hello World</p>
+    <p class="hello">Hello World</p>
+    <p class="hello">Hello World</p>
+    <p class="os">iPadOS</p>
+    <p class="os">iOS</p>
+    <p class="os">MacOS</p>
+    <p id="os">iPadOS</p>
+
+    <select>
+        <option value="Mickey">Mickey</option>
+        <option value="Minnie">Minnie</option>
+        <option value="duffy">duffy</option>
+    </select>
+
+    <div></div>
+
+
+    <label for="checked">checked</label>
+    <input type="checkbox" id="checked" checked/>
+    <label for="unchecked">unchecked</label>
+    <input type="checkbox" id="unchecked" />
+
+
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <label>haro<input type="checkbox" /></label>
+    <br>
+    <input type="button" id="hobbySelectAllBtn" value="Select All Hobbies"/>
+    <input type="button" id="hobbyUnSelectAllBtn" value="Unselect All Hobbies"/>
+    <h3>What's your hobby?</h3>
+    <label>listening music<input type="checkbox" name="hobby" value="1"/></label>
+    <label>watching youtube<input type="checkbox" name="hobby" value="2"/></label>
+    <label>watching movie<input type="checkbox" name="hobby" value="3"/></label>
+    <label>making doll<input type="checkbox" name="hobby" value="4"/></label>
+    <label>cooking<input type="checkbox" name="hobby" value="5"/></label>
+    <label>coding<input type="checkbox" name="hobby" value="6"/></label>
+    <label>none<input type="checkbox" name="hobby" value="7"/></label>
+    <br>
+    <br>
+    <br>
+    <input type="button" id="jobSelectAllBtn" value="Select All Jobs"/>
+    <input type="button" id="jobUnSelectAllBtn" value="Unselect All Jobs"/>
+    <h3>What's your Job?</h3>
+    <label>business<input type="checkbox" name="job" value="1"/></label>
+    <label>operation<input type="checkbox" name="job" value="2"/></label>
+    <label>head hunter<input type="checkbox" name="job" value="3"/></label>
+    <label>president<input type="checkbox" name="job" value="4"/></label>
+    <label>driver<input type="checkbox" name="job" value="5"/></label>
+    <label>programmer<input type="checkbox" name="job" value="6"/></label>
+    <label>designer<input type="checkbox" name="job" value="7"/></label>
+
+
+    <label for="checked">checked</label>
+    <input type="radio" id="checked" checked/>
+    <label for="unchecked">unchecked</label>
+    <input type="radio" id="unchecked" />
+
+    <form name="이 폼의 이름" action="이 데이터들을 받을 파일" method="post" enctype="multipart/form-data">
+        <input type='file' id="myFile" name='' multiple/>
+    </form>
+    <div id="showFiles">
+    </div>
 </body>
 </html>
